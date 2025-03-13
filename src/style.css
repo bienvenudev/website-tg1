@@ -1,1 +1,4 @@
 @import "tailwindcss";
+@theme {
+    --Inter-font: "Inter", "sans-serif";
+}
