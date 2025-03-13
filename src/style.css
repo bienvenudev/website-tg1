@@ -1,1 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-display: 'Outfit', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+#footer {
+    margin-top: auto;
+}
+#footer-links {
+    background-image: url(./images/Rectangle5.png);
+}
+#ye
+{
+    background-image: url(./images/Vector13.png);
+}
