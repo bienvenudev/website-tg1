@@ -1,10 +1,10 @@
 <footer class="py-4 mt-auto">
-  <div class="container mx-auto ">
-    <!-- links -->
+  <div class="w-full">
+    <!-- links section (keep as is) -->
     <div
       id="footer-links"
-      class="bg-[bg-cover bg-center bg-no-repeat h-[1063px] flex justify-center">
-      <div class="flex flex-col items-end  font-normal text-xl w-[265px] h-[775px] font-display py-28">
+      class="flex justify-end lg:flex lg:justify-end lg:px-28 md:justify-end h-[1150px] md:px-20 px-20">
+      <div class="flex flex-col items-end font-normal text-xl w-[265px] h-[775px] lg:w-[318px] lg:h-[900px] md:h-[930px] md:w-[318px] font-display pt-52 ">
         <a href="" class="block hover:underline">Ace Hotel</a>
         <a href="" class="block hover:underline">ARMENDAGELS</a>
         <a href="" class="block hover:underline">BERLIN DESIGN WEEK</a>
@@ -13,9 +13,7 @@
         <a href="" class="block hover:underline">ChungKing Noodles</a>
         <a href="" class="block hover:underline">Designpreis Brandenburg</a>
         <a href="" class="block hover:underline">Die Techniker</a>
-        <a href="" class="block hover:underline"
-          >European Street Food Awards</a
-        >
+        <a href="" class="block hover:underline">European Street Food Awards</a>
         <a href="" class="block hover:underline">Grundmann Dentistry</a>
         <a href="" class="block hover:underline">HORNBACH Macht Schule</a>
         <a href="" class="block hover:underline">iF Design</a>
@@ -36,29 +34,73 @@
         <a href="" class="block hover:underline">yamo</a>
       </div>
     </div>
-    <!-- single image -->
-     <div class="flex justify-center items-center pt-66 pb-24">
-        <div id="ye" class="w-[331px] h-[192px] ">
+    
+    <!-- single image section (keep as is) -->
+    <div class="flex justify-center items-center pt-66 lg:pt-20 pb-24 md:pb-12 lg:py-40">
+      <div id="ye" class="w-[331px] h-[192px] lg:w-[600px] lg:h-[350px] md:w-[469px] md:h-[245px]">
+      </div>
+    </div>
 
+    <!-- Contact section - completely redesigned to match screenshots -->
+    <div class="">
+      <!-- Mobile view (first image) -->
+      <div class="block md:hidden px-16 py-6 space-y-6">
+        <!-- Address -->
+        <div>
+          <p>Agentur Baumeister</p>
+          <p>Böckhstraße 13</p>
+          <p>10967 Berlin</p>
         </div>
-     </div>
-
-     <div class="px-6 font-[15px] font-medium">
-        <div class="flex flex-col">
-            <a href="">Agentur Baumeister</a>
-            <a href="">Bockhstrabe 13</a>
-            <a href="">10967 Berlin</a>
+        
+        <!-- Contact info -->
+        <div>
+          <a href="mailto:hallo@agentur-baumeister.com" class="underline block">hallo@agentur-baumeister.com</a>
+          <p>+49 (0)30 - 490 827 87</p>
         </div>
-        <div class="flex flex-col py-12">
-            <a href="" class="underline">hallo@gentur-baumeister.com</a>
-            <a href="">+49 (0)30 - 490 827 87</a>
+        
+        <!-- Footer links -->
+        <div class="flex space-x-8 justify-between">
+          <a href="">Datenschutz</a>
+          <a href="">Impressum</a>
+          <a href="">LinkedIn</a>
+          <a href="">Instagram</a>
         </div>
-        <div class="flex gap-4 py-4">
-            <a href="">Datenschutz</a>
-            <a href="">Impressum</a>
-            <a href="">LinkedIn</a>
-            <a href="">Instagram</a>
+      </div>
+      
+      <!-- Medium view (second image) -->
+      <div class="hidden md:block lg:hidden px-8 py-6">
+        <div class="flex justify-between mb-8">
+          <!-- Left side: address -->
+          <div>
+            <a href="">
+              <p>Agentur Baumeister</p>
+              <p>Böckhstraße 13</p>
+              <p>10967 Berlin</p></a>
+          </div>
+          
+          <!-- Right side: contact -->
+          <div class="text-right">
+            <a href="mailto:hallo@agentur-baumeister.com" class="underline block">hallo@agentur-baumeister.com</a>
+            <p>+49 (0)30 - 490 827 87</p>
+          </div>
         </div>
-     </div>
+        
+        <!-- Footer links -->
+        <div class="flex justify-between pb-1">
+          <a href="">LinkedIn</a>
+          <a href="">Instagram</a>
+          <a href="">Impressum</a>
+          <a href="">Datenschutz</a>
+        </div>
+      </div>
+      
+      <!-- Large view (third image) -->
+      <div class="hidden lg:flex px-8 py-6 justify-between">
+        <div><a href="" class="flex flex-col">Agentur Baumeister <span>Bockhstrabe 13</span> <span>10967 Berlin</span></a></div>
+        <div><a href="" class="flex flex-col">hallo@agentur-baumeister.com</a> <a href="">+49 (0)30 - 490 827 87</a></div>
+        <div><a href="">LinkedIn</a></div>
+        <div><a href="">Instagram</a></div>
+        <div><a href="" class="flex flex-col items-end">Impressum</a><a href="">Datenschutz</a></div>
+    </div>
   </div>
 </footer>
