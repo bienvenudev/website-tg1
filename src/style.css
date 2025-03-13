@@ -17,8 +17,14 @@ body {
 }
 #footer-links {
     background-image: url(./images/Rectangle5.png);
+    background-size: cover;
+    background-position: center;
 }
+
 #ye
 {
     background-image: url(./images/Vector13.png);
+    background-size: cover;
+    background-position: center;
+
 }
