@@ -7,11 +7,9 @@
     <title>Website project template</title>
   </head>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  
-});
+    document.addEventListener("DOMContentLoaded", () => {});
     const loadComponents = (id, url) => {
-      fetch(url)
+      return fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
@@ -19,28 +17,24 @@
     };
 
     window.onload = () => {
-      loadComponents("header", "src/sections/header.html");
+      loadComponents("header", "src/sections/header.html").then(() => {
+        const menu = document.getElementById("menu");
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        let isMenuOpen = false;
+        const menuImg = document.getElementById("menu-img");
+
+        menu.addEventListener("click", () => {
+          isMenuOpen = !isMenuOpen;
+          hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
+          menuImg.src = isMenuOpen
+            ? "/src/images/menu-close.svg"
+            : "/src/images/menu.svg";
+        });
+      });
       loadComponents("hero", "src/sections/hero.html");
       loadComponents("contact", "src/sections/contact.html");
       loadComponents("footer", "src/sections/footer.html");
-      initializeToggleMenu();
     };
-
-    const initializeToggleMenu = () => {
-      const menu = document.getElementById("menu");
-  const hamburgerMenu = document.getElementById("hamburger-menu");
-  let isMenuOpen = false;
-  const menuImg = document.getElementById("menu-img");
-
-  menu.addEventListener("click", () => {
-    isMenuOpen = !isMenuOpen;
-    hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
-    menuImg.src = isMenuOpen ? "/src/images/menu-close.svg" : "/src/images/menu.svg";
-
-  });
-
-
-    }
   </script>
   <body>
     <div id="header"></div>
