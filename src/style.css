@@ -8,9 +8,8 @@
 html, body {
     height: 100%;
 }
-body {
-    display: flex;
-    flex-direction: column;
+body{
+    display: grid;
 }
 #footer {
     margin-top: auto;
