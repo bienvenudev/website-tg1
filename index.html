@@ -30,7 +30,16 @@
             ? "/src/images/menu-close.svg"
             : "/src/images/menu.svg";
         });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 1024) {
+            hamburgerMenu.style.display = "none";
+            isMenuOpen = false;
+            menuImg.src = "/src/images/menu.svg";
+          }
+        });
       });
+
       loadComponents("hero", "src/sections/hero.html");
       loadComponents("about", "src/sections/about.html");
       loadComponents("footer", "src/sections/footer.html");
