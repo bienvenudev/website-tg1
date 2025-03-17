@@ -1,1 +1,36 @@
-<div class="bg-amber-700">Hello World</div>
+<div class="flex items-center md:items-start justify-between p-4 font-display bg-[#EFECEA]">
+    <div class="flex flex-col gap-1 text-sm font-normal md:text-2xl">
+        <div class="cursor-pointer">DE</div>
+        <div class="cursor-pointer">EN</div>
+    </div>
+    <div class="text-3xl font-semibold md:text-5xl">
+        <div>
+            <img src="/src/images/background-shape.svg" alt="background shape" class="relative">
+            <div class="absolute top-6 left-[39%]">Baumeister</div>
+        </div>
+        
+    </div>
+    <div class="md:hidden" id="menu">
+        <img src="/src/images/menu.svg" alt="menu" class="h-6 cursor-pointer w-9" id="menu-img">
+    </div>
+    <div class="hidden gap-1 text-2xl font-normal md:flex md:flex-col">
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">References</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<div class="min-h-full w-full bg-[#EFECEA] font-display hidden fixed" id="hamburger-menu">
+    <ul class="text-[#00672E] text-3xl font-semibold flex flex-col gap-10 p-10 items-center">
+        <li><a href="">About</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">References</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+    <div class="w-full">
+        <img src="/src/images/color-shapes.svg" alt="color background shapes" class="w-full">
+    </div>
+        
+</div>
