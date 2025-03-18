@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.vec{
+    background-image: url('./images/Vector7.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
