@@ -25,3 +25,4 @@ dist-ssr
 
 # PR Template
 .github/
+.qodo
