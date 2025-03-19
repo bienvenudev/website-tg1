@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Baumeister Clone</title>
+  </head>
+  <script>
+    let menu;
+    let hamburgerMenu;
+    let isMenuOpen = false;
+    let menuImg;
+
+    // Menu event listeners
+    function setupMenuListeners() {
+      menu = document.getElementById("menu");
+      hamburgerMenu = document.getElementById("hamburger-menu");
+      menuImg = document.getElementById("menu-img");
+
+      if (menu && hamburgerMenu && menuImg) {
+        menu.addEventListener("click", () => {
+          isMenuOpen = !isMenuOpen;
+          hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
+          menuImg.src = isMenuOpen
+            ? "/src/images/menu-close.svg"
+            : "/src/images/menu.svg";
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 1024) {
+            hamburgerMenu.style.display = "none";
+            isMenuOpen = false;
+            menuImg.src = "/src/images/menu.svg";
+          }
+        });
+      }
+    }
+
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+          // If header, setup the menu listeners bcs it's loaded
+          if (id === "header") {
+            setupMenuListeners();
+          }
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("header", "src/sections/header.html")
+      loadComponents("hero", "src/sections/hero.html");
+      loadComponents("contact", "src/sections/contact.html");
+      loadComponents("footer", "src/sections/footer.html");
+    };
+  </script>
+  <body class="bg-primary">
+    <div class="sticky top-0" id="header"></div>
+    <div id="hero"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+  </body>
+</html>
