@@ -2,7 +2,24 @@
 @import "tailwindcss";
 
 @theme {
-    --font-display: "Outfit", "sans-serif";
+    --font-display: 'Outfit', sans-serif;
+    --color-custom-green: #00672E;
     --color-primary: #EFECEA;
-    --color-custom-green:#00672E;
+}
+
+html, body {
+    height: 100%;
+}
+body{
+    display: grid;
+}
+#footer {
+    margin-top: auto;
+}
+
+#ye
+{
+    background-image: url(./images/Vector13.png);
+    background-size: cover;
+    background-position: center;
 }
