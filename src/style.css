@@ -3,6 +3,8 @@
 
 @theme {
     --font-display: 'Outfit', sans-serif;
+    --color-custom-green: #00672E;
+    --color-primary: #EFECEA;
 }
 
 html, body {
@@ -26,5 +28,4 @@ body{
     background-image: url(./images/Vector13.png);
     background-size: cover;
     background-position: center;
-
 }
