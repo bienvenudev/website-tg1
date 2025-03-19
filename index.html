@@ -4,25 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
-    <title>Website project template</title>
+    <title>Baumeister Clone</title>
   </head>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {});
-    const loadComponents = (id, url) => {
-      return fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(id).innerHTML = html;
-        });
-    };
+    let menu;
+    let hamburgerMenu;
+    let isMenuOpen = false;
+    let menuImg;
 
-    window.onload = () => {
-      loadComponents("header", "src/sections/header.html").then(() => {
-        const menu = document.getElementById("menu");
-        const hamburgerMenu = document.getElementById("hamburger-menu");
-        let isMenuOpen = false;
-        const menuImg = document.getElementById("menu-img");
+    // Menu event listeners
+    function setupMenuListeners() {
+      menu = document.getElementById("menu");
+      hamburgerMenu = document.getElementById("hamburger-menu");
+      menuImg = document.getElementById("menu-img");
 
+      if (menu && hamburgerMenu && menuImg) {
         menu.addEventListener("click", () => {
           isMenuOpen = !isMenuOpen;
           hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
@@ -38,17 +34,32 @@
             menuImg.src = "/src/images/menu.svg";
           }
         });
-      });
+      }
+    }
 
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+          // If header, setup the menu listeners bcs it's loaded
+          if (id === "header") {
+            setupMenuListeners();
+          }
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("header", "src/sections/header.html")
       loadComponents("hero", "src/sections/hero.html");
-      loadComponents("about", "src/sections/about.html");
+      loadComponents("services", "src/sections/services.html");
       loadComponents("footer", "src/sections/footer.html");
     };
   </script>
   <body class="bg-primary">
-    <div id="header"></div>
+    <div class="sticky top-0" id="header"></div>
     <div id="hero"></div>
-    <div id="about"></div>
+    <div id="services"></div>
     <div id="footer"></div>
   </body>
 </html>
