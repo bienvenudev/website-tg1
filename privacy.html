@@ -7,14 +7,47 @@
     <title>Data Privacy</title>
   </head>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {});
-    const loadComponents = (id, url) => {
-      return fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(id).innerHTML = html;
-        });
-    };
+      let menu;
+      let hamburgerMenu;
+      let isMenuOpen = false;
+      let menuImg;
+  
+      // Menu event listeners
+      function setupMenuListeners() {
+        menu = document.getElementById("menu");
+        hamburgerMenu = document.getElementById("hamburger-menu");
+        menuImg = document.getElementById("menu-img");
+  
+        if (menu && hamburgerMenu && menuImg) {
+          menu.addEventListener("click", () => {
+            isMenuOpen = !isMenuOpen;
+            hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
+            menuImg.src = isMenuOpen
+              ? "/src/images/menu-close.svg"
+              : "/src/images/menu.svg";
+          });
+  
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1024) {
+              hamburgerMenu.style.display = "none";
+              isMenuOpen = false;
+              menuImg.src = "/src/images/menu.svg";
+            }
+          });
+        }
+      }
+      
+      const loadComponents = (id, url) => {
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById(id).innerHTML = html;
+            // If header, setup the menu listeners bcs it's loaded
+            if (id === "header") {
+              setupMenuListeners();
+            }
+          });
+      };
 
     window.onload = () => {
       loadComponents("header", "src/sections2/navbar.html")
@@ -22,26 +55,6 @@
       loadComponents("footer", "src/sections/footer.html");
     };
 
-    
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      const languageSelector = document.getElementById('language-selector');
-      const logoBackground = document.getElementById('logo-background');
-      
-      if (window.scrollY > 50) {
-        // Scrolled state
-        navbar.classList.add('bg-white', 'shadow', 'py-2');
-        navbar.classList.remove('pt-12');
-        languageSelector.classList.add('opacity-0', 'invisible');
-        logoBackground.classList.add('opacity-0');
-      } else {
-        // Initial state
-        navbar.classList.remove('bg-white', 'shadow', 'py-2');
-        navbar.classList.add('pt-12');
-        languageSelector.classList.remove('opacity-0', 'invisible');
-        logoBackground.classList.remove('opacity-0');
-      }
-    });
   </script>
   <body class="bg-primary">
     <div id="header"></div>

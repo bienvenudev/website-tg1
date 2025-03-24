@@ -1,16 +1,41 @@
-<nav class=" text-custom-green font-display flex justify-between items-center pl-5 pr-5 pt-12 md:fixed">
-    <div class="lg:hidden">
-        <div>
+<nav class="text-custom-green font-display flex justify-between items-center px-5 py-6 top-0 left-0 w-full z-50 transition-all duration-300">
+    <!-- Mobile & Medium Screens -->
+    <div class="md:hidden flex items-center justify-between w-full">
+        <!-- DE & EN (Disappear on scroll for small screens) -->
+        <div class="peer items-center space-x-2 transition-all duration-300">
+            <h1 class="peer-scrolled:hidden">DE</h1>
+            <h1 class="peer-scrolled:hidden">EN</h1>
+        </div>
+        <!-- Baumeister (Remains on scroll) -->
+        <div class="flex items-center justify-center fixed left-1/2 -translate-x-1/2">
+            <div class="relative bg-[url(./images/background-shape.svg)] bg-contain bg-center flex items-center justify-center px-6 py-7 bg-no-repeat transition-all duration-500 peer-[.scrolled]:bg-opacity-100">
+                <h1 class="text-4xl font-bold">Baumeister</h1>
+            </div>
+        </div>
+        <!-- Icon (Remains on scroll) -->
+        <div class="fixed right-5">
+            <img src="src/images/navbar-icon.png">
+        </div>
+    </div>
+
+    <!-- Large Screen Menu (Navbar stays visible always) -->
+    <div class="hidden sm:flex sm:justify-between sm:items-center w-full max-w-screen-xl mx-auto px-10 static sm:fixed top-4">
+        <div class="space-x-2 sm:text-2xl">
             <h1>DE</h1>
             <h1>EN</h1>
         </div>
-        <div class="fixed flex justify-between items-center top-0 gap-6 pl-11 pt-5 md:gap-50">
-            <div class="relative bg-[url(./images/background-shape.svg)] bg-contain bg-center flex items-center justify-center px-4 py-7 bg-no-repeat md:ml-48">
-                <h1 class="text-4xl font-bold" >Baumeister</h1>
-            </div>
-            <div>
-                <img src="src/images/navbar-icon.png">
-            </div>
+        <div>
+            <h1 class="sm:text-5xl sm:font-bold">Baumeister</h1>
         </div>
+        <div class="space-x-6 sm:text-2xl hidden lg:block">
+            <p class="hover:text-gray-500 transition-all duration-300">About</p>
+            <p class="hover:text-gray-500 transition-all duration-300">Services</p>
+            <p class="hover:text-gray-500 transition-all duration-300">References</p>
+            <p class="hover:text-gray-500 transition-all duration-300">Contact</p>
+        </div>
+                <!-- Icon (Remains on scroll) -->
+                <div class="lg:hidden">
+                    <img src="src/images/navbar-icon.png">
+                </div>
     </div>
 </nav>
