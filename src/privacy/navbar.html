@@ -1,0 +1,64 @@
+<nav class="text-custom-green font-display flex justify-between items-center px-5 py-6 top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="sm:hidden flex items-center justify-between w-full">
+        <div class="peer items-center space-x-2 transition-all duration-300">
+            <h1 class="peer-scrolled:hidden">DE</h1>
+            <h1 class="peer-scrolled:hidden">EN</h1>
+        </div>
+        <div class="flex items-center justify-center fixed left-1/2 -translate-x-1/2">
+            <div class="relative bg-[url(./images/background-shape.svg)] bg-contain bg-center flex items-center justify-center px-6 py-7 bg-no-repeat transition-all duration-500 ">
+                <h1 class="text-4xl font-bold">Baumeister</h1>
+            </div>
+        </div>
+        <div class="fixed right-5" id="navbar-toggle">
+            <img src="src/images/navbar-icon.png">
+        </div>
+    </div>
+    <div class="hidden sm:flex sm:justify-between sm:items-center w-full max-w-screen-xl mx-auto px-10 static sm:fixed top-4">
+        <div class="space-x-2 sm:text-2xl">
+            <h1>DE</h1>
+            <h1>EN</h1>
+        </div>
+        <div class="flex items-center justify-center">
+            <div class="relative sm:bg-[url(./images/background-shape.svg)] sm:bg-contain sm:bg-center sm:flex sm:items-center sm:justify-center sm:px-6 sm:py-7 sm:bg-no-repeat sm:transition-all sm:duration-500 lg:bg-none lg:p-0">
+                <h1 class="sm:text-5xl sm:font-bold">Baumeister</h1>
+            </div>
+        </div>
+        <div class="space-x-6 sm:text-2xl hidden lg:block">
+            <p class="hover:text-gray-500 transition-all duration-300">About</p>
+            <p class="hover:text-gray-500 transition-all duration-300">Services</p>
+            <p class="hover:text-gray-500 transition-all duration-300">References</p>
+            <p class="hover:text-gray-500 transition-all duration-300">Contact</p>
+        </div>
+        <div class="lg:hidden" id="navbar-toggleMd">
+            <img src="src/images/navbar-icon.png">
+        </div>
+    </div>
+    
+</nav>
+
+  <!--What should be displayed-->
+  <div class="bg-primary relative font-display font-bold min-h-screen hidden" id="hamburger-menu">
+    <div class="flex justify-between items-center pl-5 pr-5 pt-11 md:fixed md:z-20">
+        <div>
+            <p>DE</p>
+            <p>EN</p>
+        </div>
+        <div class="text-3xl fixed top-11 left-1/2 -translate-x-1/2 md:text-4xl">
+            <h1>Baumeister</h1>
+        </div>
+        <div class="fixed top-11 right-5" id="close-icon">
+            <img src="src/images/menu-close.svg" >
+        </div>
+    </div>
+    <div class="relative">
+        <div class="text-custom-green text-2xl text-center flex flex-col gap-8 absolute z-20 top-20 w-full md:top-40 md:text-3xl">
+            <p>About</p>
+            <p>Services</p>
+            <p>References</p>
+            <p>Contact</p>
+        </div>
+        <div class="pt-60">
+            <img src="src/images/color-shapes.svg" class="md:w-full w-full">
+        </div>
+    </div>
+</div>
