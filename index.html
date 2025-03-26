@@ -11,16 +11,20 @@
     let hamburgerMenu;
     let isMenuOpen = false;
     let menuImg;
+    let headerOpen;
 
     // Menu event listeners
     function setupMenuListeners() {
       menu = document.getElementById("menu");
       hamburgerMenu = document.getElementById("hamburger-menu");
       menuImg = document.getElementById("menu-img");
+      headerOpen = document.getElementById("header-open");
 
       if (menu && hamburgerMenu && menuImg) {
         menu.addEventListener("click", () => {
           isMenuOpen = !isMenuOpen;
+          headerOpen.classList.toggle("bg-primary");
+          document.body.classList.toggle("overflow-hidden");
           hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
           menuImg.src = isMenuOpen
             ? "/src/images/menu-close.svg"
@@ -50,16 +54,20 @@
     };
 
     window.onload = () => {
-      loadComponents("header", "src/sections/header.html")
+      loadComponents("header", "src/sections/header.html");
       loadComponents("hero", "src/sections/hero.html");
+      loadComponents("about", "src/sections/about.html");
+      loadComponents("services", "src/sections/services.html");
+      loadComponents("references", "src/sections/references.html");
       loadComponents("contact", "src/sections/contact.html");
-      loadComponents("footer", "src/sections/footer.html");
     };
   </script>
-  <body>
-    <div id="header"></div>
+  <body class="bg-primary">
+    <div class="contents isolate" id="header"></div>
     <div id="hero"></div>
+    <div id="about"></div>
+    <div id="services"></div>
+    <div id="references"></div>
     <div id="contact"></div>
-    <div id="footer"></div>
   </body>
 </html>
