@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && cp -r src/ privacy.html dist/",
+    "dev": "vite --host",
+    "build": "vite build && cp -r src/ dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
