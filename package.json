@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build && cp -r src/ privacy.html dist/",
+    "build": "vite build && cp -r src/ imprint.html privacy.html dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
