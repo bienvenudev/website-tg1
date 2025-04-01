@@ -3,41 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Data Privacy</title>
   </head>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {});
-    const loadComponents = (id, url) => {
-      return fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(id).innerHTML = html;
-        });
-    };
+    /* 
+    let menu;
+      let hamburgerMenu;
+      let isMenuOpen = false;
+      let menuImg;
+  
+      // Menu event listeners
+      function setupMenuListeners() {
+        menu = document.getElementById("menu");
+        hamburgerMenu = document.getElementById("hamburger-menu");
+        menuImg = document.getElementById("menu-img");
+  
+        if (menu && hamburgerMenu && menuImg) {
+          menu.addEventListener("click", () => {
+            isMenuOpen = !isMenuOpen;
+            hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
+            menuImg.src = isMenuOpen
+              ? "/src/images/menu-close.svg"
+              : "/src/images/menu.svg";
+          });
+  
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1024) {
+              hamburgerMenu.style.display = "none";
+              isMenuOpen = false;
+              menuImg.src = "/src/images/menu.svg";
+            }
+          });
+        }
+      }
+        */
+
+    function showMenu(){
+          const navbarToggle= document.getElementById('navbar-toggle'); 
+          const hamburgerMenu = document.getElementById('hamburger-menu');
+          const closeIcon = document.getElementById('close-icon');
+          const navbarToggleMd= document.getElementById('navbar-toggleMd');
+
+
+          console.log(navbarToggle)
+    
+          
+          
+         
+              navbarToggle.addEventListener('click', () => {
+                hamburgerMenu.style.display = "block";
+                document.querySelector('nav').style.display = "none";
+                document.getElementById('hero').style.display = "none";
+                console.log('clicked');
+              });
+
+              navbarToggleMd.addEventListener('click', () => {
+                hamburgerMenu.style.display = "block";
+                document.querySelector('nav').style.display = "none";
+                document.getElementById('hero').style.display = "none";
+                console.log('clicked');
+              });
+            
+          
+    
+          
+        
+              closeIcon.addEventListener('click', () => {
+                hamburgerMenu.style.display = "none";
+                document.querySelector('nav').style.display = "block";
+                document.getElementById('hero').style.display = "block";
+
+              });
+    
+        };
+      
+    
+
+      const loadComponents = (id, url) => {
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById(id).innerHTML = html;
+            // If header, setup the menu listeners bcs it's loaded
+            if (id === "header") {
+             showMenu();
+            }
+          });
+      };
 
     window.onload = () => {
-      loadComponents("header", "src/sections/header.html").then(() => {
-        const menu = document.getElementById("menu");
-        const hamburgerMenu = document.getElementById("hamburger-menu");
-        let isMenuOpen = false;
-        const menuImg = document.getElementById("menu-img");
-
-        menu.addEventListener("click", () => {
-          isMenuOpen = !isMenuOpen;
-          hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
-          menuImg.src = isMenuOpen
-            ? "/src/images/menu-close.svg"
-            : "/src/images/menu.svg";
-        });
-      });
-      loadComponents("hero", "src/sections2/hero.html");
-      loadComponents("footer", "src/sections/footer.html");
+      loadComponents("header", "src/privacy/navbar.html")
+      loadComponents("hero", "src/privacy/hero.html");
+      loadComponents("contact", "src/privacy/contact.html");
     };
+   
   </script>
-  <body>
+  <body class="bg-primary">
     <div id="header"></div>
     <div id="hero"></div>
-    <div id="footer"></div>
+    <div class="text-custom-green" id="contact"></div>
   </body>
 </html>
