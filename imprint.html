@@ -13,8 +13,6 @@
       const closeIcon = document.getElementById("close-icon");
       const navbarToggleMd = document.getElementById("navbar-toggleMd");
 
-      console.log(navbarToggle);
-
       navbarToggle.addEventListener("click", () => {
         hamburgerMenu.style.display = "block";
         document.querySelector("nav").style.display = "none";
@@ -53,13 +51,13 @@
 
     window.onload = () => {
       loadComponents("header", "src/privacy/navbar.html");
-      loadComponents("imprint", "src/imprint/imprint.html");
+      loadComponents("body", "src/imprint/body.html");
       loadComponents("contact", "src/privacy/contact.html");
     };
   </script>
   <body class="bg-primary">
     <div id="header"></div>
-    <div id="imprint"></div>
+    <div id="body"></div>
     <div id="contact"></div>
   </body>
 </html>
