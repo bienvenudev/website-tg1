@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Baumeister Clone</title>
+  </head>
+  <script>
+    let menu;
+    let hamburgerMenu;
+    let isMenuOpen = false;
+    let menuImg;
+    let headerOpen;
+
+    // Menu event listeners
+    function setupMenuListeners() {
+      menu = document.getElementById("menu");
+      hamburgerMenu = document.getElementById("hamburger-menu");
+      menuImg = document.getElementById("menu-img");
+      headerOpen = document.getElementById("header-open");
+
+      if (menu && hamburgerMenu && menuImg) {
+        menu.addEventListener("click", () => {
+          isMenuOpen = !isMenuOpen;
+          headerOpen.classList.toggle("bg-primary");
+          document.body.classList.toggle("overflow-hidden");
+          hamburgerMenu.style.display = isMenuOpen ? "block" : "none";
+          menuImg.src = isMenuOpen
+            ? "/src/images/menu-close.svg"
+            : "/src/images/menu.svg";
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 1024) {
+            hamburgerMenu.style.display = "none";
+            isMenuOpen = false;
+            menuImg.src = "/src/images/menu.svg";
+          }
+        });
+      }
+    }
+
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+          // If header, setup the menu listeners bcs it's loaded
+          if (id === "header") {
+            setupMenuListeners();
+          }
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("header", "src/main/header.html");
+      loadComponents("hero", "src/main/hero.html");
+      loadComponents("about", "src/main/about.html");
+      loadComponents("services", "src/main/services.html");
+      loadComponents("references", "src/main/references.html");
+      loadComponents("main-contact", "src/main/main-contact.html");
+    };
+  </script>
+  <body class="bg-primary">
+    <div class="contents isolate" id="header"></div>
+    <div id="hero"></div>
+    <div id="about"></div>
+    <div id="services"></div>
+    <div id="references"></div>
+    <div id="main-contact"></div>
+  </body>
+</html>
